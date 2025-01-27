@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ResturantData } from "../components/constant"; // Import dataset
+import { ResturantData } from "./constant"; // Import dataset
 import RestaurantCard from "./Restaurantcard"; // Import card component
 
 function filterData(search, restaurants) {
@@ -33,7 +33,6 @@ const Body = () => {
                 </button>
             </div>
             <div className="restaurant-list">
-                {/* Dynamically render filtered restaurants */}
                 {restaurants.map((restaurant) => (
                     <RestaurantCard key={restaurant.id} {...restaurant} />
                 ))}

@@ -1,22 +1,45 @@
-import{ ResturantList} from '../components/constant';
-import { useState } from 'react';
-const Body=()=>{
-    const [search,setSearch]=useState('');//state variable search is  state variable & setSearch is updated fxn
+import { useState } from "react";
+import { ResturantData } from "../components/constant"; // Import dataset
+import RestaurantCard from "./Restaurantcard"; // Import card component
+
+function filterData(search, restaurants) {
+    return restaurants.filter((restaurant) =>
+        restaurant.Name.toLowerCase().includes(search.toLowerCase())
+    );
+}
+
+const Body = () => {
+    const [restaurants, setRestaurants] = useState(ResturantData); // Initialize with dataset
+    const [search, setSearch] = useState(""); // State for search query
+
     return (
-    <>
-    <div className='search-container'>
-        <input className='search-box' 
-        type='text' 
-        placeholder='search'
-        value={search}
-        onChange={(e)=>{//onchange method
-            setSearch(e.target.value);
-        }}>
-        </input>
-        <button className='search-btn'>search</button>
-    </div>
-    <div>
-     <ResturantList/>
-    </div></>
- )};
- export default Body;
+        <>
+            <div className="search-container">
+                <input
+                    className="search-box"
+                    type="text"
+                    placeholder="Search"
+                    value={search}
+                    onChange={(e) => setSearch(e.target.value)} // Update search input
+                />
+                <button
+                    className="search-btn"
+                    onClick={() => {
+                        const filteredData = filterData(search, ResturantData); // Filter original data
+                        setRestaurants(filteredData); // Update state
+                    }}
+                >
+                    Search
+                </button>
+            </div>
+            <div className="restaurant-list">
+                {/* Dynamically render filtered restaurants */}
+                {restaurants.map((restaurant) => (
+                    <RestaurantCard key={restaurant.id} {...restaurant} />
+                ))}
+            </div>
+        </>
+    );
+};
+
+export default Body;

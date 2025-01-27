@@ -1,4 +1,3 @@
-import RestaurantCard from "./Restaurantcard";
 export const ResturantData = [
     { id: 1, Name: 'Pizza', ShopName: 'Ameian', cuisine: 'Italy', rating: '4.2', Image: 'https://th.bing.com/th/id/OIP.WQBi0m_4hgc8WXSRL-_ovAHaFH?w=289&h=200&c=7&r=0&o=5&dpr=1.3&pid=1.7' },
     { id: 2, Name: 'Burger', ShopName: 'BurgeY', cuisine: 'American', rating: '4.1', Image: 'https://th.bing.com/th/id/OIP.RNEJRcChNOXRi0A6LU7KfAHaFE?w=286&h=195&c=7&r=0&o=5&dpr=1.3&pid=1.7' },

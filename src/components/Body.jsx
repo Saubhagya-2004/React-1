@@ -9,8 +9,10 @@ function filterData(search, restaurants) {
 }
 
 const Body = () => {
-    const [restaurants, setRestaurants] = useState(ResturantData); // Initialize with dataset
+    const [restaurants, setRestaurants] = useState(ResturantData); 
     const [search, setSearch] = useState(""); // State for search query
+//search is state variable setsearch is updated fxn
+console.log(restaurants);
 
     return (
         <>
@@ -25,7 +27,7 @@ const Body = () => {
                 <button
                     className="search-btn"
                     onClick={() => {
-                        const filteredData = filterData(search, ResturantData); // Filter original data
+                        const filteredData = filterData(search, restaurants); // Filter original data
                         setRestaurants(filteredData); // Update state
                     }}
                 >

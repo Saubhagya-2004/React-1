@@ -1,4 +1,5 @@
- export const Title=()=>(<a href="/">
+ export const Title=()=>(
+ <a href="/">
 <img 
 className="logo"
 alt="logo"

@@ -44,10 +44,12 @@ h2 {
 
 .resturant-card {
   text-align: center;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 8px;
-  width: 11rem;
+  width: 12rem;
   padding: 15px;
   transition: transform .3s, box-shadow .3s;
   box-shadow: 0 4px 6px #0000001a;

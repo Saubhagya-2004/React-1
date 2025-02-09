@@ -54,8 +54,10 @@ h2{
     border: 1px solid #ddd;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 11rem;
+    width: 12rem;
     padding: 15px;
     text-align: center;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }

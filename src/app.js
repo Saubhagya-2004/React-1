@@ -9,7 +9,6 @@ import Footer from './components/Footer';
 //or
 // import HeaderComponent,{ Title } from './components/Header.jsx'; 
 
-
 // const Title=()=>(
 //     <img 
 //     className='logo'

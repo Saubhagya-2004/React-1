@@ -1,4 +1,7 @@
- export const Title=()=>(
+ const logedinUser=()=>{
+    return true;
+ }
+  const Title=()=>(
  <a href="/">
 <img 
 className="logo"
@@ -17,6 +20,7 @@ const HeaderComponent=()=>(
                 <li>Cart</li>
             </ul>
         </div>
+        {logedinUser()? <button>Logout</button>:<button>Login</button>}
     </div>
 );
 export default HeaderComponent;

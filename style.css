@@ -51,13 +51,45 @@ h2{
   }
 .resturant-card {
     background-color: #fff;
-    border: 1px solid #ddd;
+    border: 2px solid #ddd;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     width: 12rem;
     padding: 15px;
+    cursor: pointer;
     text-align: center;
     word-wrap: break-word;
     overflow-wrap: break-word;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .resturant-card h2{
+    font-size: 1.2rem;
+    height:max-content;
+  }
+  .Demo{
+    display: flex;
+    background-color: #fff;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 12rem;
+    height: 30rem;
+    padding: 15px;
+    cursor: pointer;
+    text-align: center;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  .Demo img{
+    height: 8rem;
+   width: 100%;
+   object-fit: cover;
+   border-radius: 50%;
+   border: 1px solid #ddd;
+  }
+  .shimmer{
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    margin-top: 0.5rem;
   }

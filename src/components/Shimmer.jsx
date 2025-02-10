@@ -1,7 +1,36 @@
 const Shimmer=()=>{
-<div className="shimmer-container">
-    <h1>loading</h1>
-    {/* <div className="card">Loading</div> */}
-</div>
+    return(
+        <>
+        <div className="shimmer">
+        <h1 className="Demo">
+            <img src="" alt="" />
+            <p></p>
+        </h1>
+        <h1 className="Demo">
+            <img src="" alt="" />
+            <p></p>
+        </h1>
+        <h1 className="Demo">
+            <img src="" alt="" />
+            <p></p>
+        </h1>
+        <h1 className="Demo">
+            <img src="" alt="" />
+            <p></p>
+        </h1>
+        <h1 className="Demo">
+            <img src="" alt="" />
+            <p></p>
+        </h1>
+        <h1 className="Demo">
+            <img src="" alt="" />
+            <p></p>
+        </h1>
+        </div>
+        
+            </>
+        
+        
+    )
 }
 export default Shimmer;

@@ -1,7 +1,4 @@
 import { useState } from "react";
-const IsloggedIn=()=>{
-    return true;
- }
   const Title=()=>(
  <a href="/">
 <img 

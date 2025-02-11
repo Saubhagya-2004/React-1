@@ -16,18 +16,13 @@ const Body = () => {
 //search is state variable and set is updated fxn
     useEffect(() => {
         //Api call
-        try{
-
-            getRestaurant();
-        }
-        catch{
-            alert('Not found data')
-            
-        }
+         getRestaurant();
+            // console.log("effect"); 
     }, []);
-
+console.log('render');
+//render 
     async function getRestaurant() {
-        const response = await fetch(
+      const response = await fetch(
             "https://zuingy.mishra.codes/api/restaurants?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING"
         );
         const json = await response.json();//it will return a redable stream

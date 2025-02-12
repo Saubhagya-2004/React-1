@@ -69,8 +69,9 @@ h2 {
   background-color: #fff;
   border: 2px solid #ddd;
   border-radius: 8px;
+  flex-direction: row;
   width: 12rem;
-  height: 30rem;
+  height: 50rem;
   padding: 15px;
   display: flex;
   box-shadow: 0 4px 6px #0000001a;
@@ -78,22 +79,22 @@ h2 {
 
 .Demo img {
   object-fit: cover;
+  background-color: #d3d3d3;
   border: 1px solid #ddd;
   border-radius: 50%;
   width: 100%;
   height: 8rem;
 }
 
-.shimmer {
-  flex-direction: row;
+.shimmer-container {
+  flex-wrap: wrap;
   gap: 1.5rem;
-  margin-top: .5rem;
   display: flex;
 }
 
-.let {
-  background-color: #0ff;
-  width: 1.5rem;
-  height: 1rem;
+.search-box, .search-btn {
+  border: 2px solid #000;
+  border-radius: 4rem;
+  margin: 2px;
 }
 /*# sourceMappingURL=index.3a01df49.css.map */

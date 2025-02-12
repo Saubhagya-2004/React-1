@@ -1,10 +1,11 @@
 import { useState } from "react";
+import Logo from "../assests/img/food.jpeg";
   const Title=()=>(
  <a href="/">
 <img 
 className="logo"
 alt="logo"
-src="https://th.bing.com/th/id/OIP.WV9sVQ5yJJ94ZqPoAWh7OAHaEK?w=280&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"/>
+src={Logo}/>
 </a>
 );
 const HeaderComponent=()=>{

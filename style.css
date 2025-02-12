@@ -68,12 +68,13 @@ h2{
   }
   .Demo{
     display: flex;
+    flex-direction: row;
     background-color: #fff;
     border: 2px solid #ddd;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     width: 12rem;
-    height: 30rem;
+    height: 50rem;
     padding: 15px;
     cursor: pointer;
     text-align: center;
@@ -86,15 +87,29 @@ h2{
    object-fit: cover;
    border-radius: 50%;
    border: 1px solid #ddd;
+   background-color: lightgray;
   }
-  .shimmer{
+  
+ 
+  .shimmer-container {
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
     gap: 1.5rem;
-    margin-top: 0.5rem;
-  }
-   .let{
+}
+   /* .let{
     height: 1rem;
     background-color: aqua;
     width: 1.5rem;
+  } */
+  .search-box,.search-btn{
+    border-radius: 4rem;
+    border: 2px solid black;
+    margin: 2px;
+
   }
+  /* .shim {
+    display: flex;
+    flex-direction: row;
+    gap: 5rem;
+    margin-top: 0.5rem;
+  } */

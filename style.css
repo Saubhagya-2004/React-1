@@ -113,3 +113,15 @@ h2{
     gap: 5rem;
     margin-top: 0.5rem;
   } */
+.error{
+  height:100rem;
+  width:100%;
+  color: #df1313;
+  text-align: center;
+  font-size: 2rem;
+  margin-top: 0.5rem;
+  cursor: pointer;
+}
+.error:hover{
+  color: #b03f3f;
+}

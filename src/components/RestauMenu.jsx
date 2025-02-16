@@ -13,8 +13,8 @@ const RestauMenu=()=>{
         const data= await fetch("https://zuingy.mishra.codes/api/menu?page-type=REGULAR_MENU&complete-menu=true&lat=12.9351929&lng=77.62448069999999&submitAction=ENTER&restaurantId=375041");
         // console.log(data);
         const json =await data.json();
-        const fetched=(json.data.cards);
-        console.log();
+        const fetched=(json.data.cards[2].card.card.info);
+        console.log(fetched);
         setRestaurant(fetched);
      }
     return(

@@ -23,7 +23,7 @@ console.log('render');
 //render 
     async function getRestaurant() {
       const response = await fetch(
-            "https://zuingy.mishra.codes/api/restaurants?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING"
+            "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING"
         );
         const json = await response.json();//it will return a redable stream
         console.log(json);

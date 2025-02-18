@@ -1,6 +1,6 @@
 const Contact=()=>{
     return(
-        <h1>Contact Us : +1234567</h1>
+        <h1>Contact Us : +12345678</h1>
     )
 }
 export default Contact;

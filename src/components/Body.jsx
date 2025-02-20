@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import {ResturantData} from "./constant"
 import RestaurantCard from "./Restaurantcard"; // Fixed import case
 import Shimmer from "./Shimmer";
+import { Link } from "react-router";
 
 function filterData(search, restaurants) {
     return restaurants.filter((restaurant) =>
@@ -62,9 +63,10 @@ console.log('render');
                 // console.log(restaurant.info),
                 // console.log(filterRestaurants),
                 
+                <Link to= {"/restaurant/"+restaurant.info.id} style={{textDecoration:'none', color:"black"}}>
                 <RestaurantCard key={restaurant.info.id} restaurant={restaurant}
                 />
-                
+                </Link>
             ))
             )}
             </div>

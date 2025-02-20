@@ -47,7 +47,7 @@ const RestauMenu=()=>{
             console.error("Error fetching data:", error);
         }
      }
-    return (!menuItems)? <Shimmer/> : (
+    return (
         <div className="restaurant-menu">
             <div className="restaurant-header">
                 <div className="restaurant-info">

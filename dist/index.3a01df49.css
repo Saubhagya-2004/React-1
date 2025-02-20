@@ -130,7 +130,7 @@ h2 {
   margin-bottom: 2rem;
   padding: 2rem;
   display: flex;
-  box-shadow: 0 4px 6px -1px #0000001a;
+  box-shadow: 0 4px 6px #00000080;
 }
 
 .restaurant-info {

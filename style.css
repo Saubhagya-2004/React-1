@@ -4,7 +4,10 @@
     margin: 1rem;
     justify-content: space-between;
     border: 1px solid black;
-    
+    /* z-index: 1000;
+    position: fixed; */
+    width: 100%;
+    border-radius: 12px;
 }
 .nav-items ul{
   display: flex;

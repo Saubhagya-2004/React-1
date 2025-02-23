@@ -11,3 +11,4 @@ export const ResturantData = [
         
 ];
 export const Imageurl="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/";
+export const Fetcch_menu_url= `https://zuingy.mishra.codes/api/menu?page-type=REGULAR_MENU&complete-menu=true&lat=12.9351929&lng=77.62448069999999&submitAction=ENTER&restaurantId=`;

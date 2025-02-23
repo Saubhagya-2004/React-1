@@ -49,15 +49,19 @@ h2 {
   cursor: pointer;
   text-align: center;
   word-wrap: break-word;
-  overflow-wrap: break-word;
   background-color: #fff;
   border: 2px solid #ddd;
   border-radius: 8px;
   width: 12rem;
   height: 90%;
-  padding: 15px;
+  padding: .9rem;
   text-decoration: none;
+  overflow: hidden;
   box-shadow: 0 4px 6px #0000001a;
+}
+
+.restu-detail {
+  margin-bottom: .2rem;
 }
 
 .resturant-card h2 {
@@ -241,7 +245,7 @@ h2 {
 
 .menu-item:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px #0000000d;
+  box-shadow: 0 4px 12px #0009;
 }
 
 .item-info {
@@ -352,5 +356,25 @@ h2 {
 
 .menu-item {
   animation: .3s ease-out fadeIn;
+}
+
+.resmenu-header {
+  background: #fff;
+  border-radius: 16px;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 70%;
+  height: 15rem;
+  margin: 3rem 2rem 10rem 10rem;
+  padding: 2rem;
+  display: flex;
+  box-shadow: 0 4px 6px #00000080;
+}
+
+.online {
+  text-align: center;
+  width: 100%;
+  padding: 10rem;
+  display: flex;
 }
 /*# sourceMappingURL=index.3a01df49.css.map */

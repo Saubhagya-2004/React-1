@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
-import {ResturantData} from "./constant"
+import {ResturantData} from "./Constant"
 import RestaurantCard from "./Restaurantcard"; // Fixed import case
 import Shimmer from "./Shimmer";
 import { Link } from "react-router";
-
+import useGetdata from "../../utils/useGetdata";
+import useOnline from "../../utils/useOnline";
 function filterData(search, restaurants) {
     return restaurants.filter((restaurant) =>
         restaurant?.info?.name.toLowerCase()?.includes(search.toLowerCase()) // Ensure correct field access
@@ -11,30 +12,18 @@ function filterData(search, restaurants) {
 }
 
 const Body = () => {
-    const [filterRestaurants, setFilterRestaurants] = useState([]); // Fix naming
-    const [restaurants, setRestaurants] = useState([]); 
+   
     const [search, setSearch] = useState(""); // State for search query
-//search is state variable and set is updated fxn
-    useEffect(() => {
-        //Api call
-         getRestaurant();
-            // console.log("effect"); 
-    }, []);
-console.log('render');
-//render 
-    async function getRestaurant() {
-      const response = await fetch(
-            "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING"
-        );
-        const json = await response.json();//it will return a redable stream
-        console.log(json);
-        
-        const fetchedRestaurants = json.data.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
-        
-        setRestaurants(fetchedRestaurants);
-        setFilterRestaurants(fetchedRestaurants); // Ensure initial state is set
-    }
-//not render component
+    const {restaurants,filterRestaurants}= useGetdata();
+// search is state variable and set is updated fxn
+const isOnline=useOnline();
+if(!isOnline){
+    return(
+      <>
+      <h1 className='online'>🔴🔴 You are looking Offline !!. Please Check Your internet Connection🛜  </h1>
+    </>  
+    ) 
+}
     if (!restaurants) return null;
 //rendered here
     return (restaurants?.length===0)?<Shimmer/> :(
@@ -58,17 +47,17 @@ console.log('render');
                 </button>
             </div>
             <div className="restaurant-list">
-            {(filterRestaurants?.length==0) ? "no Restaurant found" : (
-            filterRestaurants.map((restaurant) => (
-                // console.log(restaurant.info),
-                // console.log(filterRestaurants),
-                
-                <Link to= {"/restaurant/"+restaurant.info.id} style={{textDecoration:'none', color:"black"}}>
-                <RestaurantCard key={restaurant.info.id} restaurant={restaurant}
-                />
-                </Link>
-            ))
-            )}
+                {(filterRestaurants?.length == 0) ? "no Restaurant found" : (
+                    filterRestaurants.map((restaurant) => (
+                        <Link
+                            key={restaurant.info.id}
+                            to={"/restaurant/" + restaurant.info.id}
+                            style={{ textDecoration: 'none', color: "black" }}
+                        >
+                            <RestaurantCard restaurant={restaurant} />
+                        </Link>
+                    ))
+                )}
             </div>
         </>
     );

@@ -1,52 +1,23 @@
-import { useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";//useparams give url id(res id)
 import { useEffect, useState } from "react";
-import { Imageurl } from "./constant";
-import Shimmer from "./Shimmer";
-const RestauMenu=()=>{
-    const{id} =useParams();//destructuring
-    const [restaurant,setRestaurant]=useState([]);
-    const [menuItems,setMenuItems]= useState([]);
-    // console.log(params);
-    useEffect(()=>{
-        getrestaurantinfo();
-    },[id]);
-    
-     async function getrestaurantinfo() {
-        try{
-        const data = await fetch(`https://zuingy.mishra.codes/api/menu?page-type=REGULAR_MENU&complete-menu=true&lat=12.9351929&lng=77.62448069999999&submitAction=ENTER&restaurantId=${id}`);
-        // console.log(data);
-        //id:375041
-        const json =await data.json();
-        //set restu info
-        const restaurantInfo = json.data.cards[2].card.card.info;
-            setRestaurant(restaurantInfo);
-        //menu items
-        const menuData = json.data.cards.find(card => card.groupedCard)
-                ?.groupedCard?.cardGroupMap?.REGULAR?.cards;
+import { Imageurl } from "./Constant";
+import ShimmerRestau from "../../utils/shimmerRestau";
+import useRestaurant from "../../utils/useRestaurant";
 
-        if(menuData){
-            const catagories = menuData.filter(card => card?.card?.card?.["@type"] === "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
-                )
-                .map(card => ( {
-                    title : card.card.card.title,
-                    items :card.card.card.itemCards.map(item=>({
-                        id: item.card.info.id,
-                        name :item.card.info.name,
-                        description : item.card.info.description,
-                        price : item.card.info.price /100,
-                        imageId : item.card.info.imageId,
-                        isVeg : item.card.info.isVeg,
-                        isBestseller: item.card.info.ribbon?.text === "Bestseller"
-                    }))
+const RestauMenu = () => {
+    const { id } = useParams(); // destructuring
+    const { restaurant, menuItems } = useRestaurant(id);
 
-                }));
-                setMenuItems(catagories);
-        }
+    useEffect(() => {
+        // Fetch menu items here and set them to state
+        // Example:
+        // fetchMenuItems(id).then(items => setMenuItems(items));
+    }, [id]);
+
+    if (!restaurant) {
+        return < ShimmerRestau/>;
     }
-        catch (error){
-            console.error("Error fetching data:", error);
-        }
-     }
+
     return (
         <div className="restaurant-menu">
             <div className="restaurant-header">

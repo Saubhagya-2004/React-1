@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Fetcch_menu_url } from "../src/components/Constant";
+import { Fetch_menu_url } from "../src/components/Constant";
 
 const useRestaurant = (id) => {
     const [restaurant, setRestaurant] = useState(null);
@@ -10,7 +10,7 @@ const useRestaurant = (id) => {
 
     async function getRestaurantInfo() {
         try {
-            const data = await fetch(`${Fetcch_menu_url}${id}`);
+            const data = await fetch(`${Fetch_menu_url}${id}`);
             // const data = await fetch(Fetcch_menu_url+id);
             const json = await data.json();
             console.log(json);

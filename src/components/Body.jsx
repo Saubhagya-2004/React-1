@@ -14,16 +14,19 @@ function filterData(search, restaurants) {
 const Body = () => {
    
     const [search, setSearch] = useState(""); // State for search query
-    const {restaurants,filterRestaurants}= useGetdata();
-// search is state variable and set is updated fxn
-const isOnline=useOnline();
-if(!isOnline){
+    
+    const {restaurants,filterRestaurants,setFilterRestaurants}= useGetdata();
+   // search is state variable and set is updated fxn
+ const isOnline=useOnline();
+ if(!isOnline)
+    {
     return(
-      <>
+    <>
       <h1 className='online'>🔴🔴 You are looking Offline !!. Please Check Your internet Connection🛜  </h1>
+      
     </>  
     ) 
-}
+    }
     if (!restaurants) return null;
 //rendered here
     return (restaurants?.length===0)?<Shimmer/> :(

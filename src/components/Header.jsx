@@ -1,35 +1,48 @@
 import { useState } from "react";
 import Logo from "../assests/img/food.jpeg";
 import { Link } from "react-router-dom";
-  const Title=()=>(
- <a href="/">
-<img 
-className="logo"
-alt="logo"
-src={Logo}/>
-</a>
+import useAuth from "../../utils/useAuth";
+
+const Title = () => (
+    <a href="/">
+        <img 
+            className="logo"
+            alt="logo"
+            src={Logo}
+        />
+    </a>
 );
-const HeaderComponent=()=>{
-    const[IsloggedIn,setIsloggedIn]=useState(true);
+
+const HeaderComponent = () => {
+    const { isLoggedIn, setIsLoggedIn } = useAuth();
+
     return (
         <div className='header'>
-            <Title/>
-            <div className='nav-items' >
+            <Title />
+            <div className='nav-items'>
                 <ul>
-                    <Link to="/" style={{textDecoration:'none'}}>
-                    <li>Home</li>
+                    <Link to="/" style={{ textDecoration: 'none' }}>
+                        <li>Home</li>
                     </Link>
-                    <Link to='/about' style={{textDecoration:'none'}}>
-                    <li>About</li>
+                    <Link to='/about' style={{ textDecoration: 'none' }}>
+                        <li>About</li>
                     </Link>
-                    <Link to='/contact' style={{textDecoration:'none'}}>
-                    <li>Contact Us</li>
+                    <Link to='/contact' style={{ textDecoration: 'none' }}>
+                        <li>Contact Us</li>
                     </Link>
                     <li>Cart</li>
+                    {/* <Link to='/instamart' style={{ textDecoration: 'none' }}>
+                        <li>Insta Mart</li>
+                    </Link> */}
                 </ul>
             </div>
-            {IsloggedIn ? (<button onClick={()=>{setIsloggedIn(false)}} >Logout</button>):(<button onClick={()=>{setIsloggedIn(true)}}>Login</button>)}
+            {isLoggedIn ? (
+                <button onClick={() => setIsLoggedIn(false)}>Logout</button>
+            ) : (
+                <button onClick={() => setIsLoggedIn(true)}>Login</button>
+            )}
         </div>
     );
 };
+
 export default HeaderComponent;

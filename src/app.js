@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{lazy,Suspense} from 'react';
 import ReactDOM from 'react-dom/client';
 // Default export
 import HeaderComponent from './components/Header';
@@ -9,13 +9,14 @@ import Error from './components/Error';
 import Contact from './components/Contact';
 import RestauMenu from './components/RestauMenu';
 import Profile from './components/profile';
+// import Instamart from './components/instamart';
 import { createBrowserRouter, RouterProvider,Outlet } from 'react-router-dom'; // Correct import from 'react-router-dom'
 
 // Named export
 // import { Title, HeaderComponent } from './components/Header';
 // or
 // import HeaderComponent, { Title } from './components/Header.jsx'; 
-
+const Instamart=lazy(()=>import('./components/instamart'));
 const AppLayout = () => (
     <>
         <HeaderComponent />
@@ -54,6 +55,13 @@ const appRouter = createBrowserRouter([
                 path: '/restaurant/:id',
                 element: <RestauMenu />
             },
+            // {
+            //     path:'/instamart',
+            //     element: 
+            //     <Suspense>
+            //         <Instamart/>
+            //     </Suspense> 
+            // }
         ]
     },
 ]);

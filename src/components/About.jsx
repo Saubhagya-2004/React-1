@@ -5,7 +5,7 @@ const About =()=>{
         <div className="about">
             <h1>Hi</h1>
             <h2>i'm Chiku</h2>
-            {Outlet}
+            <Outlet/>
         </div>
         </>
     )

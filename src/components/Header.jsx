@@ -1,7 +1,9 @@
-import { useState } from "react";
+import { useState} from "react";
 import Logo from "../assests/img/food.jpeg";
 import { Link } from "react-router-dom";
 import useAuth from "../../utils/useAuth";
+import { useSelector } from "react-redux";
+import Store from "../../utils/Store";
 
 const Title = () => (
     <a href="/">
@@ -15,7 +17,10 @@ const Title = () => (
 
 const HeaderComponent = () => {
     const { isLoggedIn, setIsLoggedIn } = useAuth();
-
+  const cartitems = useSelector( Store=> Store.cart.items)
+  console.log(cartitems);
+  
+  // (Store => Store.cart.items) specifies which part of the Redux state you want to extract. In this case, it is accessing Store.cart.items.store.js
     return (
         <div className='header'>
             <Title />
@@ -29,13 +34,18 @@ const HeaderComponent = () => {
                     </Link>
                     <Link to='/contact' style={{ textDecoration: 'none' }}>
                         <li>Contact Us</li>
-                    </Link>
-                    <li>Cart</li>
+                   </Link>
+                    
+                   <Link to='/cart' style={{textDecoration:'none'}}>
+                   <li>Cart{cartitems.length}</li>
+                   </Link>
+                    
                     {/* <Link to='/instamart' style={{ textDecoration: 'none' }}>
                         <li>Insta Mart</li>
                     </Link> */}
                 </ul>
             </div>
+            
             {isLoggedIn ? (
                 <button onClick={() => setIsLoggedIn(false)}>Logout</button>
             ) : (

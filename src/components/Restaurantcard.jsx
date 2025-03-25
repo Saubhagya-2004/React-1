@@ -1,4 +1,4 @@
-
+import userContext from "../../utils/userContext";
 const RestaurantCard = ({ restaurant}) => {
     // console.log(resturant);
     const imageUrl = `https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/${restaurant.info.cloudinaryImageId}`;
@@ -6,6 +6,7 @@ const RestaurantCard = ({ restaurant}) => {
     return (
         <div className='resturant-card'>
             <div className="restu-detail">
+              
             <img src={imageUrl} alt={name} />
             <h2>{restaurant.info.name}</h2>
             <h3 className='cusine'>{restaurant.info.cuisines.join(",")}</h3>

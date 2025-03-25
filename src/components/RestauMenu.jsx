@@ -3,7 +3,8 @@ import { useEffect, useState } from "react";
 import { Imageurl } from "./Constant";
 import ShimmerRestau from "../../utils/shimmerRestau";
 import useRestaurant from "../../utils/useRestaurant";
-
+import { additems } from "../../utils/cartslice";
+import { useDispatch } from "react-redux";
 const RestauMenu = () => {
     const { id } = useParams(); // destructuring
     const { restaurant, menuItems } = useRestaurant(id);
@@ -16,6 +17,13 @@ const RestauMenu = () => {
 
     if (!restaurant) {
         return < ShimmerRestau/>;
+    }
+    const dispatch =useDispatch();
+    // const handleitem = () =>{
+    //     dispatch(additems('grapes')) //click + icon  dispatch fxn  give payloads(grapes) additems comes cartslice
+    // }
+    const addfooditem =(item)=>{
+        dispatch(additems(item)); //object pass
     }
 
     return (
@@ -40,6 +48,9 @@ const RestauMenu = () => {
                             <div className="metric">
                                 <span>{restaurant.costForTwoMessage}</span>
                                 <span className="metric-label">Cost for two</span>
+                            </div>
+                            <div className="additems">
+                                
                             </div>
                         </div>
                     </div>
@@ -73,8 +84,12 @@ const RestauMenu = () => {
                                             }
                                         </div>
                                         <p className="item-price">₹{item.price}</p>
-                                        {item.description && 
+                                        { item.description &&
+                                        <div>
+
                                             <p className="item-description">{item.description}</p>
+                                            {/* <button onClick={()=>handleitem()}>Add items</button> demo data */}
+                                        </div>
                                         }
                                     </div>
                                     {item.imageId && (
@@ -84,6 +99,8 @@ const RestauMenu = () => {
                                                 alt={item.name}
                                                 className="item-image"
                                             />
+                                               
+                                               <button onClick={()=>addfooditem(item)}>Add item</button>
                                         </div>
                                     )}
                                 </div>

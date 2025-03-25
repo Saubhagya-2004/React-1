@@ -1,4 +1,4 @@
-import React,{lazy,Suspense} from 'react';
+import React,{lazy,Suspense, useState} from 'react';
 import ReactDOM from 'react-dom/client';
 // Default export
 import HeaderComponent from './components/Header';
@@ -9,21 +9,28 @@ import Error from './components/Error';
 import Contact from './components/Contact';
 import RestauMenu from './components/RestauMenu';
 import Profile from './components/profile';
+import Cart from './components/Cart';
 // import Instamart from './components/instamart';
 import { createBrowserRouter, RouterProvider,Outlet } from 'react-router-dom'; // Correct import from 'react-router-dom'
-
+import { Provider } from 'react-redux';
+import Store from '../utils/Store';
 // Named export
 // import { Title, HeaderComponent } from './components/Header';
 // or
 // import HeaderComponent, { Title } from './components/Header.jsx'; 
 const Instamart=lazy(()=>import('./components/instamart'));
-const AppLayout = () => (
-    <>
+const AppLayout = () => {
+//  
+    return(
+    <Provider store={Store}>
+ 
         <HeaderComponent />
         <Outlet/>
         <Footer />
-    </>
-);
+      
+    </Provider>
+)
+};
 
 // Also write it under AppLayout component
 const appRouter = createBrowserRouter([
@@ -55,6 +62,10 @@ const appRouter = createBrowserRouter([
                 path: '/restaurant/:id',
                 element: <RestauMenu />
             },
+            {
+                path: '/cart',
+                element:<Cart/>,
+            }
             // {
             //     path:'/instamart',
             //     element: 

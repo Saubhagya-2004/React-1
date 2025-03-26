@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Imageurl } from './constant';
+import { Imageurl } from '../components/constant';
 import { clearcart, additems, removeitems,deleteitems } from '../../utils/cartslice';
 //icon
 import { MdDelete } from "react-icons/md";

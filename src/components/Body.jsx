@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import {ResturantData} from "./Constant"
 import RestaurantCard from "./Restaurantcard"; // Fixed import case
 import Shimmer from "./Shimmer";
 import { Link } from "react-router";

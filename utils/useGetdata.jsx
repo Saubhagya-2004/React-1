@@ -1,6 +1,6 @@
 import react from "react";
 import { useState,useEffect } from "react";
-import { Restu_Url } from "../src/components/Constant";
+import { Restu_Url } from "../src/components/constant";
 const useGetdata=()=>{
     const [filterRestaurants, setFilterRestaurants] = useState([]); // Fix naming
     const [restaurants, setRestaurants] = useState([]); 

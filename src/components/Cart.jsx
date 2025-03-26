@@ -1,8 +1,9 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Imageurl } from './Constant';
+import { Imageurl } from './constant';
 import { clearcart, additems, removeitems,deleteitems } from '../../utils/cartslice';
-
+//icon
+import { MdDelete } from "react-icons/md";
 function Cart() {
     const cartItems = useSelector((store) => store.cart.items);
     const dispatch = useDispatch();
@@ -57,7 +58,7 @@ function Cart() {
                             <p className="item-total">Total: ₹{item.price * item.quantity}</p>
                             <button className="remove-button" onClick={() => handleadd(item)}>+</button>
                             <button className="remove-button" onClick={() => handledelete(item)}>-</button>
-                            <button onClick={() => handleremove(item)}>Remove</button>
+                            <button onClick={() => handleremove(item)}><MdDelete/></button>
                         </div>
                     </div>
                 ))}

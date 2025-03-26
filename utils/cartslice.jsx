@@ -16,12 +16,14 @@ const cartslice = createSlice({
     },
     deleteitems :(state,action)=>{
         const existitem =  state.items.find(item => item.id === action.payload.id)//when i click + icon it will dispatch or action
-        if(existitem<1){
-         existitem.quantity-=1;
-        }
-        else{
-         state.items.push({...action.payload,quantity:1})
-        }
+        
+        
+            if(existitem.quantity > 1){
+
+                existitem.quantity-=1;
+            }
+       
+       
      },
     removeitems:(state,action)=>{
         // Remove the specific item by filtering based on its id
@@ -35,6 +37,9 @@ const cartslice = createSlice({
         }
 
     },
+    clearcart:(state)=>{
+        state.items = [];
+    }
    
   }
 });

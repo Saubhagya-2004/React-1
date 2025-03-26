@@ -100,7 +100,7 @@ const RestauMenu = () => {
                                                 className="item-image"
                                             />
                                                
-                                               <button onClick={()=>addfooditem(item)}>Add item</button>
+                                               <button onClick={()=>addfooditem(item)}>Add to Cart</button>
                                         </div>
                                     )}
                                 </div>

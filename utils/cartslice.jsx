@@ -15,7 +15,7 @@ const cartslice = createSlice({
        }
     },
     deleteitems :(state,action)=>{
-        const existitem =  state.items.find(item => item.id === action.payload.id)//when i click + icon it will dispatch or action
+        const existitem =  state.items .find(item => item.id === action.payload.id)//when i click + icon it will dispatch or action
         
         
             if(existitem.quantity > 1){

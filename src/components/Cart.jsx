@@ -56,8 +56,8 @@ function Cart() {
                             <p className="item-price">Price: ₹{item.price}</p>
                             <p className="item-quantity">Quantity: {item.quantity}</p>
                             <p className="item-total">Total: ₹{item.price * item.quantity}</p>
-                            <button className="remove-button" onClick={() => handleadd(item)}>+</button>
                             <button className="remove-button" onClick={() => handledelete(item)}>-</button>
+                            <button className="remove-button" onClick={() => handleadd(item)}>+</button>
                             <button onClick={() => handleremove(item)}><MdDelete/></button>
                         </div>
                     </div>

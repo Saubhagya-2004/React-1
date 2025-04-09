@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import useAuth from "../../utils/useAuth";
 import { useSelector } from "react-redux";
 import Store from "../../utils/Store";
+import { IoCart } from "react-icons/io5";
 
 const Title = () => (
     <a href="/">
@@ -37,7 +38,7 @@ const HeaderComponent = () => {
                    </Link>
                     
                    <Link to='/cart' style={{textDecoration:'none'}}>
-                   <li>Cart{cartitems.length}</li>
+                   <li><IoCart />{cartitems.length}</li>
                    </Link>
                     
                     {/* <Link to='/instamart' style={{ textDecoration: 'none' }}>

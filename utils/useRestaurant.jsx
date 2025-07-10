@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Fetch_menu_url } from "../src/components/Constant";
+import { Fetch_menu_url } from "../src/components/constant";
 
 const useRestaurant = (id) => {
     const [restaurant, setRestaurant] = useState(null);

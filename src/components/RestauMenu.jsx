@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";//useparams give url id(res id)
 import { useEffect, useState } from "react";
-import { Imageurl } from "./Constant";
+import { Imageurl } from "./constant";
 import ShimmerRestau from "../../utils/shimmerRestau";
 import useRestaurant from "../../utils/useRestaurant";
 import { additems } from "../../utils/cartslice";
